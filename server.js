@@ -7,11 +7,8 @@ const express = require('express')
 // importing ejs
 const ejs = require('ejs')
 
-// -----ask from chandramani--------
+const path = require('path') // inbuilt module of node js
 
-const path = require('path')
-
-// -----ask from chandramani--------
 // importing express layout
 const expressLayout = require('express-ejs-layouts')
 
@@ -22,19 +19,22 @@ const PORT = process.env.PORT || 3300
 // available in the environment or not if available then select that
 // other wise set it to 3000
 
-// -----ask from chandramani--------
-app.get('/',(req,res)=>{
+// Assets
+app.use(express.static('public')) // express by default does not serve static files so this function is used 
+// to serve static files like css, scripts, images etc...
+
+app.get('/',(req,res)=>{ // here we are responding to request send with / link 
     res.render('home')
 })
-// -----ask from chandramani--------
-// -----ask from chandramani--------
 // set template engine
-app.use(expressLayout)
+app.use(expressLayout) 
 app.set('views', path.join(__dirname, '/resources/views'))
 app.set('view engine', 'ejs')
-// -----ask from chandramani--------
 
-app.listen(PORT, () => {
+app.listen(PORT, () => { 
+// what basically listen does is that it prepares the specified 
+// port to listen request and printing response written later in 
+// the funciton in termial
     console.log(`Listening on port ${PORT}`) // backticks (`) is used to insert port as a variable
 })
 // now the server is created
