@@ -23,13 +23,27 @@ const PORT = process.env.PORT || 3300
 app.use(express.static('public')) // express by default does not serve static files so this function is used 
 // to serve static files like css, scripts, images etc...
 
-app.get('/',(req,res)=>{ // here we are responding to request send with / link 
-    res.render('home')
-})
 // set template engine
 app.use(expressLayout) 
 app.set('views', path.join(__dirname, '/resources/views'))
 app.set('view engine', 'ejs')
+
+app.get('/',(req,res)=>{ // here we are responding to request send with / link 
+    res.render('home')
+})
+
+// handling request going to cart page
+app.get('/cart',(req,res) =>{
+    res.render('customers/cart')
+})
+
+app.get('/login',(req,res) =>{
+    res.render('auth/login')
+})
+
+app.get('/register',(req,res) =>{
+    res.render('auth/register')
+})
 
 app.listen(PORT, () => { 
 // what basically listen does is that it prepares the specified 

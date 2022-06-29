@@ -38,3 +38,30 @@ section.hero {
         color: $pure;
     }
 }
+
+.btn-primary {
+    transition: $smooth;
+    background: $primary;
+    &:hover{
+        background: $primary-hover;
+    }
+}
+section.cart {
+    background: $secondary;
+    .amount {
+        color: $primary;
+    }
+}
+
+section.login{
+    background: $secondary;
+    min-height: calc(100vh - 86px); // this is done because if we will do only 100 vh it will not include
+    // height of navbar and will extend the screen which will enable the screen to scroll which we don't want
+    // so we approximately subtracted the height of navbar from the full screen
+    a{
+        color: $primary;
+        &:hover{
+            color: $primary-hover;
+        }
+    }
+}
