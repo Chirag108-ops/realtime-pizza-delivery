@@ -44,10 +44,10 @@ section.hero {
 }
 
 .btn-primary {
-    transition: $smooth;
-    background: $primary;
+    transition: $smooth!important;
+    background: $primary!important;
     &:hover{
-        background: $primary-hover;
+        background: $primary-hover!important;
     }
 }
 section.cart {
