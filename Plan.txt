@@ -37,6 +37,7 @@
 [+] Place order funcitonality
 [+] Show all my orders on customer orders page
 [+] Show orders on admin orders page
+[+] Change order status
 [-] Create orders single page with status 
 [-] order tracker
     - dependencies moment

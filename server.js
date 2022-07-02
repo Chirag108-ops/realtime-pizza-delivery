@@ -23,7 +23,7 @@ const PORT = process.env.PORT || 3300
 // available in the environment or not if available then select that
 // other wise set it to 3000
 const mongoose = require('mongoose')
-
+const Emitter = require('events')
 const flash = require('express-flash')
 app.use(flash())
 const MongoDbStore = require('connect-mongo')
@@ -31,7 +31,7 @@ const MongoDbStore = require('connect-mongo')
 const passport = require('passport')
 const url = "mongodb://localhost/pizza";
 
-mongoose.connect(url,
+const connection = mongoose.connect(url,
     err =>{
         if(err) throw err;
         console.log('Connected to Database')
@@ -44,6 +44,10 @@ app.use(express.static('public')) // express by default does not serve static fi
 // enabling sever to recieve json request
 app.use(express.json())
 app.use(express.urlencoded({extended: false})) // enabling sever to recieve url encoded data
+
+// Event Emitter
+const eventEmitter = new Emitter()
+app.set('eventEmitter', eventEmitter)
 // session configuration
 app.use(session({
     secret : process.env.COOKIE_SECRET,
@@ -76,7 +80,7 @@ app.set('view engine', 'ejs')
 
 require('./routes/web')(app) // In javascript every function is passed by refrence
 
-app.listen(PORT, () => { 
+const server = app.listen(PORT, () => { 
 // what basically listen does is that it prepares the specified 
 // port to listen request and printing response written later in 
 // the funciton in termial
@@ -84,3 +88,21 @@ app.listen(PORT, () => {
 })
 // now the server is created
 
+// socket
+
+const io = require('socket.io')(server)
+io.on('connection', (socket) => {
+    // join the client
+    socket.on('join', (roomName) => {
+        socket.join(roomName)
+    })
+
+})
+
+eventEmitter.on('orderUpdated', (data) => {
+    io.to(`order_${data.id}`).emit('orderUpdated',data)
+})
+
+eventEmitter.on('orderPlaced', (data) => {
+    io.to('adminRoom').emit('orderPlaced',data)
+})
