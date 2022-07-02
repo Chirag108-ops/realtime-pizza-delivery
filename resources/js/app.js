@@ -75,7 +75,6 @@ updateStatus(order);
 
 // socket
 let socket = io()
-initAdmin(socket)
 // Join
 // here we are telling the server that we have arrived and take the client id and make a private room
 if(order){
@@ -83,6 +82,7 @@ if(order){
 }
 let adminAreaPath = window.location.pathname
 if(adminAreaPath.includes('admin')){
+    initAdmin(socket)
     socket.emit('join','adminRoom')
 }
 socket.on('orderUpdated', (data) => {

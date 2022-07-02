@@ -2626,8 +2626,7 @@ function updateStatus(order) {
 
 updateStatus(order); // socket
 
-var socket = io();
-(0,_admin__WEBPACK_IMPORTED_MODULE_2__.initAdmin)(socket); // Join
+var socket = io(); // Join
 // here we are telling the server that we have arrived and take the client id and make a private room
 
 if (order) {
@@ -2637,6 +2636,7 @@ if (order) {
 var adminAreaPath = window.location.pathname;
 
 if (adminAreaPath.includes('admin')) {
+  (0,_admin__WEBPACK_IMPORTED_MODULE_2__.initAdmin)(socket);
   socket.emit('join', 'adminRoom');
 }
 
