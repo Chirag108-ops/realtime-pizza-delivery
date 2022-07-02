@@ -27,17 +27,20 @@
         - install notification library npm i noty https://ned.im/noty/#/
 [+] Create login page with route
 [+] Create register page with route
-[-] Build register curd
+[+] Build register curd
     - dependencies express-flash express-session cookie-parser dotenv
     - status code article https://www.restapitutorial.com/httpstatuscodes.html
-[-] Create order controller and link it in server.js
-[-] Create orders view with table for customer and admin
-[-] Create orders single page with status 
-[-] Build login using passport
+[+] Build login using passport
     - install dependencies passport passport-local express-session
-[-] Make order on carts page
-[-] Place order funcitonality
+[+] Create order controller and link it in server.js
+[+] Create orders view with table for customer and admin
+[+] Place order funcitonality
+[+] Show all my orders on customer orders page
+[+] Show orders on admin orders page
+[-] Create orders single page with status 
 [-] order tracker
     - dependencies moment
 [-] Socket connection
     - dependencies socket.io
+[-] Build project for deployment
+[-] Deploy project on live server

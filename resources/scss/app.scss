@@ -73,3 +73,6 @@ section.login{
     border-radius: 50px!important; // The !important rule in CSS is used to add more importance to a property/value than normal.
     padding-left: 8px!important;
 }
+a.link {
+    color: $primary;
+}
