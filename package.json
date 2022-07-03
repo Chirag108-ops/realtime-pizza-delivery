@@ -10,7 +10,7 @@
     "development": "mix",
     "watch": "npx mix watch",
     "watch-poll": "npx mix watch -- --watch-options-poll=1000",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "production": "npx mix --production"
   },
   "license": "MIT",
   "dependencies": {

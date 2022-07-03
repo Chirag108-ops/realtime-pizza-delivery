@@ -29,9 +29,7 @@ app.use(flash())
 const MongoDbStore = require('connect-mongo')
 // Data Base Connection
 const passport = require('passport')
-const url = "mongodb://localhost/pizza";
-
-const connection = mongoose.connect(url,
+const connection = mongoose.connect(process.env.MONGO_CONNECTION_URL,
     err =>{
         if(err) throw err;
         console.log('Connected to Database')
@@ -53,7 +51,7 @@ app.use(session({
     secret : process.env.COOKIE_SECRET,
     resave : false,
     store: MongoDbStore.create({
-        mongoUrl : url
+        mongoUrl : process.env.MONGO_CONNECTION_URL
     }),  // this code helps in storing sessions in database
     saveUninitialized : false,
     cookie : {maxAge: 1000 * 60 * 60 * 24} // age of cookies in ms here it is equal to 24 hours
@@ -79,6 +77,9 @@ app.set('views', path.join(__dirname, '/resources/views'))
 app.set('view engine', 'ejs')
 
 require('./routes/web')(app) // In javascript every function is passed by refrence
+app.use((req,res) => {
+    res.status(404).send('<h1>404, Page not found</h1>')
+})
 
 const server = app.listen(PORT, () => { 
 // what basically listen does is that it prepares the specified 
