@@ -1,0 +1,58 @@
+[{
+  "_id": {
+    "$oid": "62bed4a759d5fee8577a3a5e"
+  },
+  "name": "Chirag Goyal",
+  "email": "chiraggoyal4520@gmail.com",
+  "password": "$2b$10$WPW4M882BvgcZ6T0F4PN/.gQwpVMLuN3ePsjAr7da5cWUMp00K.h.",
+  "role": "admin",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1656673447327"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1656673447327"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62beeebfb1288aae6a2b51c6"
+  },
+  "name": "Pinky Goyal",
+  "email": "pinky@gmail.com",
+  "password": "$2b$10$HvC5jqOHsuU39BI3kd0KM.Lz150FU5lb51WyxjSEFD/V3jnxnFbSG",
+  "role": "customer",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1656680127267"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1656680127267"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c058602189018408fb5798"
+  },
+  "name": "Suresh Goyal",
+  "email": "sureshgoyal@gmail.com",
+  "password": "$2b$10$D8XT.31Vi50dCHQoZ3QRleqh/OF5mLU9gCI1p7wa6yTrSJHiyrJJm",
+  "role": "customer",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1656772704142"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1656772704142"
+    }
+  },
+  "__v": 0
+}]

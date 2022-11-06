@@ -29,11 +29,13 @@ app.use(flash())
 const MongoDbStore = require('connect-mongo')
 // Data Base Connection
 const passport = require('passport')
-const connection = mongoose.connect(process.env.MONGO_CONNECTION_URL,
+// "mongodb+srv://chiraggoyal4520:Chirag%4012@cluster0.wvabnp4.mongodb.net/pizza"
+const connection = mongoose.connect("mongodb+srv://chiraggoyal4520:Chirag%4012@cluster0.wvabnp4.mongodb.net/pizza",
     err =>{
         if(err) throw err;
         console.log('Connected to Database')
     });
+
 
 // Assets
 app.use(express.static('public')) // express by default does not serve static files so this function is used 
@@ -51,7 +53,7 @@ app.use(session({
     secret : process.env.COOKIE_SECRET,
     resave : false,
     store: MongoDbStore.create({
-        mongoUrl : process.env.MONGO_CONNECTION_URL
+        mongoUrl : "mongodb+srv://chiraggoyal4520:Chirag%4012@cluster0.wvabnp4.mongodb.net/pizza"
     }),  // this code helps in storing sessions in database
     saveUninitialized : false,
     cookie : {maxAge: 1000 * 60 * 60 * 24} // age of cookies in ms here it is equal to 24 hours
