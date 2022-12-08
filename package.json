@@ -13,6 +13,9 @@
     "production": "npx mix --production"
   },
   "license": "MIT",
+  "engines": {
+    "node": "16.17.0"
+  },
   "dependencies": {
     "axios": "^0.27.2",
     "bcrypt": "^5.0.1",

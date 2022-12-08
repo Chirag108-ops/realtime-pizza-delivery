@@ -1,0 +1,25 @@
+[{
+  "_id": "j0Xh3tHEYt8l4MMBSpbZNgs2u3m6XuVc",
+  "expires": {
+    "$date": {
+      "$numberLong": "1667746486546"
+    }
+  },
+  "session": "{\"cookie\":{\"originalMaxAge\":86400000,\"expires\":\"2022-11-06T14:36:14.295Z\",\"httpOnly\":true,\"path\":\"/\"},\"passport\":{\"user\":\"62c058602189018408fb5798\"},\"flash\":{}}"
+},{
+  "_id": "GfTronO1xHRsCJ5t0PBupVT1BLC3xc-Q",
+  "expires": {
+    "$date": {
+      "$numberLong": "1667745289474"
+    }
+  },
+  "session": "{\"cookie\":{\"originalMaxAge\":86400000,\"expires\":\"2022-11-06T14:34:41.775Z\",\"httpOnly\":true,\"path\":\"/\"},\"passport\":{\"user\":\"62bed4a759d5fee8577a3a5e\"},\"flash\":{},\"cart\":{\"items\":{\"5eee6671a27a66807cf2bea3\":{\"item\":{\"_id\":\"5eee6671a27a66807cf2bea3\",\"name\":\"Marinara\",\"image\":\"pizza.png\",\"price\":300,\"size\":\"medium\"},\"qty\":1},\"5eee6692a27a66807cf2bea4\":{\"item\":{\"_id\":\"5eee6692a27a66807cf2bea4\",\"name\":\"Carbonara\",\"image\":\"pizza.png\",\"price\":200,\"size\":\"small\"},\"qty\":1}},\"totalQty\":2,\"totalPrice\":500}}"
+},{
+  "_id": "QKKQ1EZfxCI_YElwdChqoDGgVnux24Me",
+  "expires": {
+    "$date": {
+      "$numberLong": "1667745438774"
+    }
+  },
+  "session": "{\"cookie\":{\"originalMaxAge\":86400000,\"expires\":\"2022-11-06T14:35:50.073Z\",\"httpOnly\":true,\"path\":\"/\"},\"passport\":{\"user\":\"62bed4a759d5fee8577a3a5e\"},\"flash\":{}}"
+}]
