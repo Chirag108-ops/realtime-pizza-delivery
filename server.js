@@ -18,7 +18,7 @@ const expressLayout = require('express-ejs-layouts')
 const Noty = require('noty')
 const app = express() // this will return the main object of express and stores in app variable
 
-const PORT = process.env.PORT || 3300
+const PORT = 0.0.0.0:$PORT || 3300
 // the above code is checking if there any prdefined suitable port
 // available in the environment or not if available then select that
 // other wise set it to 3000
